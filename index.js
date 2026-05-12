@@ -5,7 +5,8 @@ const axios = require('axios');
 const app = express();
 
 const CHANNEL_SECRET = 'f98835e84e7343478d5a5f910a843b96';
-const CHANNEL_ACCESS_TOKEN = 'D13H1tTdt4FmL23zM7LPXk02a4OSrl1ictslxuT/3lncJSyolnq+8NwR4xGRSYAx/bYYktDLYU4Kry5X0gOaKKyI8wNFvHqdslh78v25eSErCgJq9yCXsf6QeQKwavbUXK8T6A28FHcHZ2y9mnYKcQdB04t89/1O/w1cDnyilFU=';
+onm+bW0l7NNBYxM+llauWHBqzbve7gJfoH+0iiGJgIsiw49dm+o3cEhd9BgWGBJW/bYYktDLYU4Kry5X0gOaKKyI8wNFvHqdslh78v25eSGF8yHSlqXK8JVXqOcu94qD5AF1sBQvyrQwRV+0sljI4QdB04t89/1O/w1cDnyilFU=
+
 
 app.use('/webhook', express.raw({ type: 'application/json' }));
 app.use(express.json());
