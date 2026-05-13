@@ -4,15 +4,14 @@ const axios = require('axios');
 const app = express();
 app.use(express.raw({type:'*/*'}));
 const S = 'f98835e84e7343478d5a5f910a843b96';
-const T = 'onm+bW0l7NNBYxM+llauWHBqzbve7gJfoH+0iiGJgIsiw49dm+o3cEhd9BgWGBJW/bYYktDLYU4Kry5X0gOaKKyI8wNFvHqdslh78v25eSGF8yHSlqXK8JVXqOcu94qD5AF1sBQvyrQwRV+0sljI4QdB04t89/1O/w1cDnyilFU=';
+const T = '39zEzChCZQaWjSIpaPWc4mELUHzfHN2HbZaQVOFEW0czVgM+eUNAa4Ia9DbCpW+p/bYYktDLYU4Kry5X0gOaKKyI8wNFvHqdslh78v25eSFp1RYDLhazsQj4xvtEaoGjjIYFRuFmTuUIrviEKhhKNQdB04t89/1O/w1cDnyilFU=';
 async function reply(token, text) {
   await axios.post('https://api.line.me/v2/bot/message/reply',{replyToken:token,messages:[{type:'text',text:text}]},{headers:{'Authorization':'Bearer '+T,'Content-Type':'application/json'}});
 }
 app.post('/webhook', async (req, res) => {
   res.status(200).send('OK');
   try {
-    const body = req.body;
-    const events = JSON.parse(body).events;
+    const events = JSON.parse(req.body).events;
     for (const e of events) {
       if (e.type !== 'message') continue;
       const t = e.message.text;
